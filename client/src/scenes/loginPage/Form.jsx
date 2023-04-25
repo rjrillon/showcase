@@ -1,9 +1,18 @@
 import { useState } from "react";
+import {
+  Box,
+  Button,
+  TextField,
+  useMediaQuery,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "state";
+import FlexBetween from "components/FlexBetween";
 
 // Yup Validation Schema:
 // Will determine the shape of how the form library is going to be saving this information
@@ -44,6 +53,9 @@ const Form = () => {
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isNonMobile = useMediaQuery("(min-width: 600px)");
+  const isLogin = pageType === "login";
+  const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
     // normally we can just use values and pass it to a normal request body itself,
@@ -78,15 +90,21 @@ const Form = () => {
     }
   };
 
+  //values === every value prop created inside text field (values.firstName, values.lastName, etc)
+  const handleFormSubmit = async (values, onSubmitProps) => {
+    if (isLogin) await login(values, onSubmitProps);
+    if (isRegister) await register(values, onSubmitProps);
+  };
+
   return (
+    // What Formik is doing:
+    // Grabbing the handleFormSubmit and passing it in our Formik so it can pass it on to our onSubmit func
     <Formik
-      onSubmit={}
-      initialValues={}
-      validationSchema={}
-    >
-      
-    </Formik>
-  )
+      onSubmit={handleFormSubmit}
+      initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
+      validationSchema={isLogin ? loginSchema : registerSchema}
+    ></Formik>
+  );
 };
 
 export default Form;
