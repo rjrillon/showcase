@@ -41,6 +41,16 @@ const Form = () => {
   const [pageType, setPageType] = useState("login");
   const { palette } = useTheme();
   const navigate = useNavigate();
+
+  const register = async values => {
+    try {
+      const response = await axios.post("/auth/register", values);
+      console.log(response);
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 };
 
 export default Form;
