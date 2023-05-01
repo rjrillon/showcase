@@ -1,3 +1,4 @@
+import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,7 +34,26 @@ const MyPostWidget = ({ picturePath }) => {
     setPost("");
   };
 
-  return <WidgetWrapper></WidgetWrapper>;
+  return (
+    <WidgetWrapper>
+      <FlexBetween>
+        {/* users img */}
+        {/* if image, see dropzone */}
+      </FlexBetween>
+
+      <FlexBetween>Image</FlexBetween>
+      {/* post upload options */}
+      <Button
+        onClick={handlePost}
+        sx={{
+          color: palette.background.alt,
+          backgroundColor: palette.primary.main,
+        }}
+      >
+        POST
+      </Button>
+    </WidgetWrapper>
+  );
 };
 
 export default MyPostWidget;
