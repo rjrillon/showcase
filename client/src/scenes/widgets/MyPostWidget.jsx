@@ -1,4 +1,5 @@
 import FlexBetween from "components/FlexBetween";
+import UserImage from "components/UserImage";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,6 +7,7 @@ import { setPosts } from "state";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
+  const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
   const [post, setPost] = useState("");
   const { palette } = useTheme();
@@ -38,7 +40,21 @@ const MyPostWidget = ({ picturePath }) => {
     <WidgetWrapper>
       <FlexBetween>
         {/* users img */}
+        <UserImage image={picturePath} />
+        {/* post text */}
+        <InputBase
+          placeholder="What's on your mind..."
+          onChange={e => setPost(e.target.value)}
+          value={post}
+          sx={{
+            width: "100%",
+            backgroundColor: palette.neutral.medium,
+            borderRadius: "1rem",
+            padding: "1rem 3rem",
+          }}
+        />
         {/* if image, see dropzone */}
+        {isImage && <Dropzone acceptedFiles=".jpg,.png"></Dropzone>}
       </FlexBetween>
 
       <FlexBetween>Image</FlexBetween>
