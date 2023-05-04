@@ -75,7 +75,7 @@ const MyPostWidget = ({ picturePath }) => {
           }}
         />
       </FlexBetween>
-      {/* if image, see dropzone */}
+      {/* if image selected, see dropzone */}
       {isImage && (
         <Box
           border={`1px solid ${medium}`}
@@ -124,7 +124,7 @@ const MyPostWidget = ({ picturePath }) => {
 
       <Divider sx={{ margin: "1.25rem 0" }} />
 
-      {/* post upload options */}
+      {/* turns on/off image dropzone */}
       <FlexBetween>
         <FlexBetween gap="0.25rem" onClick={() => setIsImage(!isImage)}>
           <ImageOutlined sx={{ color: mediumMain }} />
