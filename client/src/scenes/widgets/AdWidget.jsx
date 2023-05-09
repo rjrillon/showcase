@@ -26,8 +26,8 @@ const AdWidget = () => {
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
-        <Typography color={main}>JustAnotherCosmetics</Typography>
-        <Typography color={medium}>JustAnotherCosmetics.com</Typography>
+        <Typography color={main}>CosmeticsStore</Typography>
+        <Typography color={medium}>cosmeticstore.com</Typography>
       </FlexBetween>
 
       <Typography color={medium} m="0.5rem 0">

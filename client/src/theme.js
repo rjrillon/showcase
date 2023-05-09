@@ -40,7 +40,7 @@ export const themeSettings = mode => {
             primary: {
               dark: colorTokens.primary[200],
               main: colorTokens.primary[500],
-              light: colorTokens.primary[800],
+              light: colorTokens.primary[600],
             },
             neutral: {
               dark: colorTokens.base[100],
@@ -65,12 +65,12 @@ export const themeSettings = mode => {
               dark: colorTokens.base[700],
               main: colorTokens.base[500],
               mediumMain: colorTokens.base[400],
-              medium: colorTokens.base[300],
-              light: colorTokens.base[50],
+              medium: colorTokens.base[400],
+              light: colorTokens.base[200],
             },
             background: {
-              default: colorTokens.base[100],
-              alt: colorTokens.base[50],
+              default: colorTokens.base[200],
+              alt: colorTokens.base[10],
             },
           }),
     },
