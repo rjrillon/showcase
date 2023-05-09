@@ -1,18 +1,18 @@
 // color design tokens export
 export const colorTokens = {
   base: {
-    0: "#FEFBF8",
-    10: "#FEF9F2",
-    50: "#FEF6ED",
-    100: "#FDF3E7",
-    200: "#FDF1E1",
-    300: "#FCEEDC",
-    400: "#D6C9B9",
-    500: "#B0A699",
-    600: "#8B8278",
-    700: "#655F57",
-    800: "#3F3B37",
-    900: "#191816",
+    0: "#FEF9F2",
+    10: "#FEF6ED",
+    50: "#FDF3E7",
+    100: "#FDF1E1",
+    200: "#FCEEDC",
+    300: "#D6C9B9",
+    400: "#B0A699",
+    500: "#8B8278",
+    600: "#655F57",
+    700: "#3F3B37",
+    800: "#191816",
+    900: "#0A0A0A",
     1000: "#000000",
   },
   primary: {
@@ -25,7 +25,7 @@ export const colorTokens = {
     600: "#B33B27",
     700: "#6B2317",
     800: "#240C08",
-    900: "##180805",
+    900: "#180805",
   },
 };
 
@@ -40,7 +40,7 @@ export const themeSettings = mode => {
             primary: {
               dark: colorTokens.primary[200],
               main: colorTokens.primary[500],
-              light: colorTokens.primary[800],
+              light: colorTokens.primary[600],
             },
             neutral: {
               dark: colorTokens.base[100],
@@ -65,12 +65,12 @@ export const themeSettings = mode => {
               dark: colorTokens.base[700],
               main: colorTokens.base[500],
               mediumMain: colorTokens.base[400],
-              medium: colorTokens.base[300],
-              light: colorTokens.base[50],
+              medium: colorTokens.base[400],
+              light: colorTokens.base[200],
             },
             background: {
-              default: colorTokens.base[10],
-              alt: colorTokens.base[0],
+              default: colorTokens.base[200],
+              alt: colorTokens.base[10],
             },
           }),
     },
